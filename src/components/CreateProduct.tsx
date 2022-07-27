@@ -1,10 +1,24 @@
+import { useState } from "react";
+
 export function CreateProduct() {
+    const [value, setValue] = useState('')
+
+    const changeHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        setValue(event.target.value)
+    }
+
+    const submitHandler = (event: React.FormEvent) => {
+        event.preventDefault()
+    }
+
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       <input 
         type="text"
         className="border py-2 px-4 mb-2 w-full outline-0"
         placeholder="Enter product title..."
+        value={value}
+        onChange={changeHandler}
         />
 
         <button className="py-2 px-4 border bg-yellow-400 hover:bg-orange-400" type="submit">Submit</button>

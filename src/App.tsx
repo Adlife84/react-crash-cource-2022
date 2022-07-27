@@ -15,7 +15,7 @@ function App() {
       {products.map((product) => (
         <Product product={product} key={product.id} />
       ))}
-      <Modal>
+      <Modal title="Create new product">
         <CreateProduct />
       </Modal>
       {/* <Product product={ products[0] }/> */}
